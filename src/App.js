@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Switch, Route } from 'react-router-dom';
+import { Routes, Route } from 'react-router-dom';
 
 import Home from './pages/Home/Home';
 import Gallery from './pages/Gallery/Gallery';
@@ -27,13 +27,13 @@ const App = () => {
 			<SidebarButton toggleSidebar={toggleSidebar} isOpen={isOpen} />
 			<Sidebar isOpen={isOpen} />
 
-			<Switch>
-				<Route exact path='/' component={Home} />
-				<Route exact path='/galerie' component={Gallery} />
-				<Route exact path='/galerie/:albumId' component={Album} />
-				<Route exact path='/galerie/:albumId/aperçu' component={ScrollAlbum} />
-				<Route exact path='/galerie/:albumId/:photoId' component={Photo} />
-				<Route exact path='/projets' component={Projects} />
+			<Routes>
+				<Route path='/' element={<Home />} />
+				<Route path='/galerie' element={<Gallery />} />
+				<Route path='/galerie/:albumId' element={<Album />} />
+				<Route path='/galerie/:albumId/aperçu' element={<ScrollAlbum />} />
+				<Route path='/galerie/:albumId/:photoId' element={<Photo />} />
+				<Route path='/projets' element={Projects} />
 				{/* <Route
 					exact
 					path='/projets/:nom1'
@@ -51,7 +51,7 @@ const App = () => {
 				/> */}
 				<Route exact path='/apropos' component={About} />
 				<Route exact path='/contact' component={Contact} />
-			</Switch>
+			</Routes>
 		</>
 	);
 };

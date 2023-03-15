@@ -22,14 +22,14 @@
 	scroll-snap-type: y mandatory;
 
 	@include phone {
-		margin-top: 5rem;
 		width: 80vw;
+		margin-top: 5rem;
 	}
 
 	@include tablet {
-		margin-top: 3rem;
 		height: 68vh;
 		width: 80vw;
+		margin-top: 3rem;
 	}
 }
 
